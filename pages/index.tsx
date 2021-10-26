@@ -2,7 +2,7 @@ import { useState } from "react";
 import router from "next/router";
 
 export default function Index() {
-  const answerKey = "AAAAAAAAAAAAAAAAAAAAAAAAA";
+  const answerKey = process.env.NEXT_PUBLIC_ANSWER_KEY;
   const [answers, rawSetAnswers] = useState([]);
   const [username, setUsername] = useState("");
   const [error, setError] = useState("");
