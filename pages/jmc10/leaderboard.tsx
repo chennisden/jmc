@@ -6,13 +6,16 @@ export default function Leaderboard() {
     (async () => {
       const res = await fetch("/api/getSubmissions", {
         method: "POST",
+        body: JSON.stringify({
+          version: 10,
+        }),
       });
       setSubmissions(JSON.parse(await res.text()));
     })();
   }, []);
   return (
     <div className="mx-8 my-8 space-y-2">
-      <h1>Leaderboard</h1>
+      <h1>JMC 10 Leaderboard</h1>
       <div className="grid grid-cols-2">
         <div>Username</div>
         <div>Score</div>
