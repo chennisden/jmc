@@ -139,6 +139,10 @@ export default function Index() {
         account, then please make up some username and indicate that it is not
         an AoPS username. For instance, "dennisc (no AoPS account)" would work.
       </p>
+      <p>
+        <em>DO NOT INPUT "ANONYMOUS" AS YOUR USERNAME.</em> After seeing your
+        score, you will be given the option to remain anonymous.
+      </p>
       <input
         className="px-4 h-8 rounded-md ring-1 ring-gray-200 dark:ring-gray-800 focus:outline-none focus:ring-blue-500 dark:focus:ring-blue-600 bg-white dark:bg-gray-900 autofill:bg-blue-100 dark:autofill:bg-gray-700"
         value={username}
