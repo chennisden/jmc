@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "cookies": "^0.8.0",
     "esbuild": "^0.12.25",
     "mdx-bundler": "^6.0.1",
     "mongodb": "^4.1.3",
