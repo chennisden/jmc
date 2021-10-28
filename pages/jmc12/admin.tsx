@@ -6,6 +6,10 @@ export default function Admin() {
   const [password, setPassword] = useState("");
   const [uuid, setUUID] = useState("");
 
+  useEffect(() => {
+    submitPassword("cookie");
+  }, []);
+
   async function verify() {
     await fetch("/api/verify-submission", {
       method: "POST",
@@ -16,10 +20,10 @@ export default function Admin() {
     });
     viewSubmissions();
   }
-  async function submitPassword() {
+  async function submitPassword(action) {
     const res = await fetch("/api/admin-verify", {
       method: "POST",
-      body: password,
+      body: JSON.stringify({ action, password }),
     });
     if (res.status === 200) {
       viewSubmissions();
@@ -58,7 +62,7 @@ export default function Admin() {
             <button
               className="bg-blue-700 hover:bg-blue-600 active:bg-blue-800 rounded-md bg-opacity-90 text-gray-100 text-lg px-6 py-1.5"
               onClick={() => {
-                submitPassword();
+                submitPassword("set");
               }}
             >
               Authenticate
