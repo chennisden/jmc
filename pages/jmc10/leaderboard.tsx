@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function Leaderboard() {
   const [submissions, setSubmissions] = useState(undefined);
+  let index = 0;
   const getSubmissions = async () => {
     const res = await fetch("/api/getSubmissions", {
       method: "POST",
@@ -33,19 +34,22 @@ export default function Leaderboard() {
           className="text-blue-500 hover:text-blue-400"
         >
           dchen@dennisc.net
-        </a>
+        </a>{" "}
         to indicate that you have submitted the JMC, along with the username you
         used.
       </p>
       <h2>Leaderboard</h2>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-3">
+        <div>Ranking</div>
         <div>Username</div>
         <div>Score</div>
         {submissions &&
           submissions.map((submission) => {
             if (submission.verified) {
+              index++;
               return (
                 <>
+                  <div>{index}</div>
                   <div>
                     {submission.show ? submission.username : "Anonymous"}
                   </div>
