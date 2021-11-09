@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "cookies": "^0.8.0",
+    "dotenv": "^10.0.0",
     "esbuild": "^0.12.25",
     "mdx-bundler": "^6.0.1",
     "mongodb": "^4.1.3",
